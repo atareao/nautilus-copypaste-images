@@ -1,0 +1,476 @@
+# Spanish translations for PACKAGE package.
+# Copyright (C) 2012 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# atareao <lorenzo.carbonell.cerezo@gmail.com>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nautilus-image-tools 0.0.3\n"
+"Report-Msgid-Bugs-To: lorenzo.carbonell.cerezo@gmail.com\n"
+"POT-Creation-Date: 2016-01-17 12:20+0100\n"
+"PO-Revision-Date: 2012-02-26 19:31+0100\n"
+"Last-Translator: atareao <lorenzo.carbonell.cerezo@gmail.com>\n"
+"Language-Team: Spanish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:197
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:259
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1824
+msgid "Watermark"
+msgstr "Marca de agua"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:211
+msgid "Water mark"
+msgstr "Marca de agua"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:245
+msgid "Top"
+msgstr "Arriba"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:246
+msgid "Middle"
+msgstr "En medio"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:247
+msgid "Bottom"
+msgstr "Abajo"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:250
+msgid "Left"
+msgstr "Izquierda"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:251
+msgid "Center"
+msgstr "Centrado"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:252
+msgid "Right"
+msgstr "Derecha"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:254
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:536
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:617
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:784
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:900
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:933
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:976
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1016
+msgid "Overwrite original file?"
+msgstr "¿Sobreescribo los archivos originales?"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:265
+msgid "Choose File"
+msgstr "Selecciona imagen"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:269
+#, fuzzy
+msgid "Horizontal position"
+msgstr "Horizontal"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:278
+#, fuzzy
+msgid "Vertical position"
+msgstr "Vertical"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:350
+msgid "Please choose a file"
+msgstr "Por favor, elige un arhivo"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:358
+#, fuzzy
+msgid "Png files"
+msgstr "Archivos png"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:446
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:460
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:471
+msgid "Convert to"
+msgstr "Convertir a"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:620
+msgid "Brightness"
+msgstr ""
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:628
+msgid "Color"
+msgstr ""
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:636
+#, fuzzy
+msgid "Contrast"
+msgstr "Contornear"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:644
+msgid "Sharpness"
+msgstr ""
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:787
+msgid "Noise"
+msgstr ""
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:830
+msgid "Vintage Operation"
+msgstr ""
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:911
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:925
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1814
+#, fuzzy
+msgid "Rotate images"
+msgstr "Gira imágenes"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:935
+msgid "Degrees"
+msgstr ""
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:954
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:968
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1004
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1817
+msgid "Flip images"
+msgstr "Voltea imágenes"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:990
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1818
+#, fuzzy
+msgid "Resize images"
+msgstr "Redimensiona imágenes"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1013
+msgid "pixels"
+msgstr "pixels"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1014
+msgid "%"
+msgstr "%"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1018
+msgid "Maintain aspect ratio?"
+msgstr ""
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1021
+msgid "Width"
+msgstr "Ancho"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1038
+msgid "Height"
+msgstr "Altuo"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1584
+#, fuzzy
+msgid "Processing files"
+msgstr "Procesando imágenes"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1638
+#, fuzzy
+msgid "Tools to manipule images"
+msgstr "Un conjunto de herramientas para manipular imágenes"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1663
+#, fuzzy
+msgid "Enhance image"
+msgstr "Gira imágenes"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1714
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1816
+msgid "Negative"
+msgstr ""
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1723
+msgid "Black & White"
+msgstr "Blanco y negro"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1732
+msgid "Grey scale"
+msgstr "Escala de grises"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1741
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1821
+msgid "Vintage"
+msgstr "Vintage"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1750
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1822
+msgid "Blur"
+msgstr "Emborronar"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1758
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1825
+msgid "Contour"
+msgstr "Contornear"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1767
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1823
+msgid "Shadow"
+msgstr "Añadir sombra"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1784
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1826
+msgid "Border"
+msgstr "Añadir borde"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1805
+msgid "Image tools"
+msgstr "Herramientas para modificar imágenes"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1806
+msgid "Tools to work with images"
+msgstr "Herrramientas para trabajar con imágenes"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1814
+#, fuzzy
+msgid "Rotate"
+msgstr "Girar"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1815
+msgid "Enhance"
+msgstr ""
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1815
+#, fuzzy
+msgid "Enhance images"
+msgstr "Gira imágenes"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1816
+#, fuzzy
+msgid "Negative images"
+msgstr "Gira imágenes"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1817
+msgid "Flip"
+msgstr "Voltear"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1818
+#, fuzzy
+msgid "Resize"
+msgstr "Redimensionar"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1819
+msgid "Black and white"
+msgstr "Convertir en blanco y negro"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1819
+msgid "Transform images to black and white"
+msgstr "Transforma imágnes en blanco y negro"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1820
+msgid "Greyscale"
+msgstr "Escala de grises"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1820
+msgid "Transform images to grey scale"
+msgstr "Transforma imágenes en escala de grises"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1821
+msgid "Apply vintage effect"
+msgstr "Aplica un efecto vintaje a las imágenes"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1822
+msgid "Apply blur filter"
+msgstr "Emborrona las imágenes"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1823
+msgid "Add shadow"
+msgstr "Añade sombra a las imágenes"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1824
+msgid "Add a watermark"
+msgstr "Añade una marca de agua a las imágenes"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1825
+msgid "Apply contour filter"
+msgstr "Aplica un filtro de contorno"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1826
+msgid "Add a border"
+msgstr "Añade un borde a las imágenes"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1827
+msgid "Convert"
+msgstr "Convertir"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1827
+msgid "Convert images to another format"
+msgstr "Convierte imágenes entre formatos"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1841
+#: /home/lorenzo/CloudStation/Programacion/Python/trusty/nautilus-image-tools/src/nautilus-image-tools.py:1842
+msgid "About"
+msgstr "Acerca de..."
+
+#~ msgid "Pdf file"
+#~ msgstr "Archivo Pdf"
+
+#~ msgid "Up"
+#~ msgstr "Arriba"
+
+#~ msgid "Down"
+#~ msgstr "Abajo"
+
+#~ msgid "Add"
+#~ msgstr "Añadir"
+
+#~ msgid "Remove"
+#~ msgstr "Quitar"
+
+#~ msgid "Select one or more pdf files"
+#~ msgstr "Selecciona uno o mas archivos pdf"
+
+#~ msgid "Select Pages"
+#~ msgstr "Páginas seleccionadas"
+
+#~ msgid "Pages"
+#~ msgstr "Páginas"
+
+#~ msgid ""
+#~ "Type page number and/or page\n"
+#~ "ranges separated by commas\n"
+#~ "counting from start of the\n"
+#~ "document ej. 1,4,6-9"
+#~ msgstr ""
+#~ "Excribe el número de la página y/o el rango\n"
+#~ "de las páginas separadas por comas empezando\n"
+#~ "a contar desde el inicio del documento, por\n"
+#~ "ejemplo 1,4,6-9"
+
+#~ msgid "Paper size"
+#~ msgstr "Tamaño de hoja"
+
+#~ msgid "Select the size of the output file"
+#~ msgstr "Selecciona tamaño del archivo de salida"
+
+#~ msgid "Orientation"
+#~ msgstr "Orientación"
+
+#~ msgid "Select the orientation of the page"
+#~ msgstr "Selecciona la orientación de las páginas"
+
+#~ msgid "Pages in Page"
+#~ msgstr "Paginas por hoja"
+
+#~ msgid "Select how many pages in a page"
+#~ msgstr "Selecciona cuantas páginas por hoja"
+
+#~ msgid "by"
+#~ msgstr "por"
+
+#~ msgid "rows by columns"
+#~ msgstr "filas por columnas"
+
+#~ msgid "Sort"
+#~ msgstr "Ordena"
+
+#~ msgid "Select the combination sort"
+#~ msgstr "Selecciona el orden de combinación"
+
+#~ msgid "Set the margin"
+#~ msgstr "Establece el margen"
+
+#~ msgid "The margin to the page in mm"
+#~ msgstr "Establece el margen en mm"
+
+#~ msgid "By rows"
+#~ msgstr "Por filas"
+
+#~ msgid "By columns"
+#~ msgstr "Por columnas"
+
+#~ msgid "Select file to save new file"
+#~ msgstr "Selecciona el archivo para guardar el documento"
+
+#~ msgid "Combine pages"
+#~ msgstr "Combina páginas"
+
+#~ msgid "Rotate some pages"
+#~ msgstr "Gira algunas páginas"
+
+#~ msgid "Tools to manage pdf files"
+#~ msgstr "Un conjunto de herramientas para trabajar con archivos pdf"
+
+#~ msgid "Remove some pages"
+#~ msgstr "Quita algunas páginas"
+
+#~ msgid "Extract some pages"
+#~ msgstr "Extrae algunas páginas"
+
+#~ msgid "Select file to save extracted pages"
+#~ msgstr "Selecciona el archivo para guardar las páginas extraidas"
+
+#~ msgid "Select file to save extracted text"
+#~ msgstr "Selecciona el archivo para guardar las páginas extraidas"
+
+#~ msgid "Pdf Tools"
+#~ msgstr "Herramientas Pdf"
+
+#~ msgid "Rotate to the right"
+#~ msgstr "Gira a la derecha"
+
+#~ msgid "Rotate pdf files 90 degrees clockwise"
+#~ msgstr "Gira archivos pdf 90 grados en sentido horario"
+
+#~ msgid "Rotate to the left"
+#~ msgstr "Gira a la izquierda"
+
+#~ msgid "Rotate 90 degrees couterclockwise"
+#~ msgstr "Gira 90 grados en sentido antihorario"
+
+#~ msgid "Rotate 180 degrees"
+#~ msgstr "Gira 90 grados en sentido horario"
+
+#~ msgid "Rotate 180 degrees clockwise"
+#~ msgstr "Gira 90 grados en sentido horario"
+
+#~ msgid "Rotate pages of the document"
+#~ msgstr "Gira algunas paǵinas del documento"
+
+#~ msgid "Remove pages"
+#~ msgstr "Quita páginas"
+
+#~ msgid "Remove pages from the document"
+#~ msgstr "Quita algunas páginas del documento"
+
+#~ msgid "Extract pages"
+#~ msgstr "Extrae páginas"
+
+#~ msgid "Extract pages from the document"
+#~ msgstr "Extrae páginas del documento"
+
+#~ msgid "Join pdf files in one document"
+#~ msgstr "Une archivos pdf en un único documento"
+
+#~ msgid "Split pdf file"
+#~ msgstr "Separa un archivo pdf"
+
+#~ msgid "Split one pdf file"
+#~ msgstr "Separa un archivo pdf"
+
+#~ msgid "Combine pdf pages"
+#~ msgstr "Combina varias paginas por hoja"
+
+#~ msgid "Combine pdf pages in one page"
+#~ msgstr "Combina varias páginas en una única"
+
+#~ msgid "Resize pdf pages"
+#~ msgstr "Redimensiona páginas"
+
+#~ msgid "Extract text"
+#~ msgstr "Extrae texto"
+
+#~ msgid "Extract text from pdf"
+#~ msgstr "Extrae texto del documento"
+
+#~ msgid "Rotate 90 degrees clockwise"
+#~ msgstr "Gira 90 grados en sentido horario"
+
+#~ msgid "Rotate pdf files 180 degrees clockwise"
+#~ msgstr "Gira archivos pdf 90 grados en sentido horario"
+
+#~ msgid "Rotate pdf files 90 degrees counterclockwise"
+#~ msgstr "Gira archivos pdf 90 grados en sentido antihorario"
+
+#~ msgid "Rotate Pdf files 180º"
+#~ msgstr "Gira 190º"
