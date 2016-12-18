@@ -19,15 +19,26 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-from gi.repository import Nautilus as FileManager
+import gi
+try:
+    gi.require_version('Gtk', '3.0')
+    gi.require_version('Nautilus', '3.0')
+except Exception as e:
+    print(e)
+    exit(-1)
+import os
+from threading import Thread
+from urllib import unquote_plus
 from gi.repository import GObject
 from gi.repository import Gtk
+from gi.repository import GLib
+from gi.repository import Nautilus as FileManager
 from gi.repository import Gdk
 from gi.repository import GdkPixbuf
-import urllib
-import os
-import locale
-import gettext
+
+APPNAME = 'nautilus-copypaste-images'
+ICON = 'nautilus-copypaste-images'
+VERSION = '0.1.0-0extras15.10.0'
 
 
 def get_suported_extensions():
@@ -40,32 +51,17 @@ def get_suported_extensions():
         extensions.append('.'+extension)
     return extensions
 
-EXTENSIONS = get_suported_extensions()
+EXTENSIONS_FROM = get_suported_extensions()
 SAVETO = ['.png', '.jpg', '.tif', '.ico', '.bmp']
-SEPARATOR = u'\u2015' * 10
-NAME = 'Nautilus'
-LANGDIR = '/usr/share/locale-langpack'
-APP = 'nautilus-copypaste-images'
-ICON = 'image'
-VERSION = '0.1.0-0extras15.10.0'
-
-try:
-    current_locale, encoding = locale.getdefaultlocale()
-    language = gettext.translation(APP, '/usr/share/locale-langpack',
-                                   [current_locale])
-    language.install()
-    _ = language.ugettext
-except Exception as e:
-    print(e)
-    _ = str
+_ = str
 
 
 def get_files(files_in):
     files = []
     for file_in in files_in:
-        file_in = urllib.unquote(file_in.get_uri()[7:])
-        fileName, fileExtension = os.path.splitext(file_in)
-        if fileExtension.lower() in EXTENSIONS and os.path.isfile(file_in):
+        print(file_in)
+        file_in = unquote_plus(file_in.get_uri()[7:])
+        if os.path.isfile(file_in):
             files.append(file_in)
     return files
 
@@ -79,7 +75,6 @@ class CopyPasteImagesMenuProvider(GObject.GObject, FileManager.MenuProvider):
         method"""
         atom = Gdk.atom_intern('CLIPBOARD', True)
         self.clipboard = Gtk.Clipboard.get(atom)
-        pass
 
     def all_files_are_images(self, items):
         for item in items:
@@ -87,39 +82,6 @@ class CopyPasteImagesMenuProvider(GObject.GObject, FileManager.MenuProvider):
             if fileExtension.lower() not in EXTENSIONS:
                 return False
         return True
-
-    def about(self, menu):
-        ad = Gtk.AboutDialog()
-        ad.set_name(APP)
-        ad.set_icon_name(ICON)
-        ad.set_version(VERSION)
-        ad.set_copyright('Copyrignt (c) 2013-2014\nLorenzo Carbonell')
-        ad.set_comments(_('Tools to copy and paste images'))
-        ad.set_license(
-            """
-This program is free software: you can redistribute it and/or modify it
-under the terms of the GNU General Public License as published by the
-Free Software Foundation, either version 3 of the License, or (at your option)
-any later version.
-
-This program is distributed in the hope that it will be useful, but
-WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
-or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
-more details.
-
-You should have received a copy of the GNU General Public License along with
-this program.  If not, see <http://www.gnu.org/licenses/>.
-""")
-        ad.set_website('http://www.atareao.es')
-        ad.set_website_label('http://www.atareao.es')
-        ad.set_authors([
-            'Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>'])
-        ad.set_documenters([
-            'Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>'])
-        ad.set_program_name(APP)
-        ad.set_logo_icon_name(ICON)
-        ad.run()
-        ad.destroy()
 
     def get_file_items(self, window, sel_items):
         """
@@ -141,14 +103,15 @@ this program.  If not, see <http://www.gnu.org/licenses/>.
                 name='CopyPasteImagesMenuProvider::Gtk-copy-image',
                 label='Copy image',
                 tip='Copy image to clipboard')
-            sub_menuitem01.connect('activate', self.copy_image, sel_items)
+            sub_menuitem01.connect('activate', self.copy_image, sel_items,
+                                   window)
             submenu.append_item(sub_menuitem01)
         if self.clipboard.wait_is_image_available():
             sub_menuitem02 = FileManager.MenuItem(
                 name='CopyPasteImagesMenuProvider::Gtk-paste-image',
                 label='Paste image',
                 tip='Paste image from the clipboard')
-            sub_menuitem02.connect('activate', self.paste_image)
+            sub_menuitem02.connect('activate', self.paste_image, window)
             submenu.append_item(sub_menuitem02)
         sub_menuitem_98 = FileManager.MenuItem(
             name='CopyPasteImagesMenuProvider::Gtk-none',
@@ -163,40 +126,12 @@ this program.  If not, see <http://www.gnu.org/licenses/>.
         submenu.append_item(sub_menuitem_99)
         return top_menuitem,
 
-    def get_background_items(self, window, file):
-        top_menuitem = FileManager.MenuItem(
-            name='CopyPasteImagesMenuProvider::Gtk-image-tools',
-            label=_('CopyPaste Images'),
-            tip=_('Tools to copy and paste images'),
-            icon='Gtk-find-and-replace')
-        submenu = FileManager.Menu()
-        top_menuitem.set_submenu(submenu)
-        if self.clipboard.wait_is_image_available():
-            sub_menuitem02 = FileManager.MenuItem(
-                name='CopyPasteImagesMenuProvider::Gtk-paste-image',
-                label='Paste image',
-                tip='Paste image from the clipboard')
-            sub_menuitem02.connect('activate', self.paste_image)
-            submenu.append_item(sub_menuitem02)
-        sub_menuitem_98 = FileManager.MenuItem(
-            name='CopyPasteImagesMenuProvider::Gtk-none',
-            label=SEPARATOR)
-        submenu.append_item(sub_menuitem_98)
-        sub_menuitem_99 = FileManager.MenuItem(
-            name='CopyPasteImagesMenuProvider::Gtk-document-converter-99',
-            label=_('About'),
-            tip=_('About'),
-            icon='Gtk-find-and-replace')
-        sub_menuitem_99.connect('activate', self.about)
-        submenu.append_item(sub_menuitem_99)
-        return top_menuitem,
-
-    def copy_image(self, menu, files):
+    def copy_image(self, menu, files, window):
         files = get_files(files)
         if len(files) > 0:
             afile = files[0]
             if not os.path.exists(afile):
-                md = Gtk.MessageDialog(parent=None,
+                md = Gtk.MessageDialog(parent=window,
                                        flags=Gtk.DialogFlags.MODAL |
                                        Gtk.DialogFlags.DESTROY_WITH_PARENT,
                                        type=Gtk.MessageType.ERROR,
@@ -205,19 +140,15 @@ this program.  If not, see <http://www.gnu.org/licenses/>.
                 md.run()
                 exit(-1)
             pixbuf = GdkPixbuf.Pixbuf.new_from_file(afile)
-            # atom = Gdk.atom_intern('CLIPBOARD', True)
-            # clipboard = Gtk.Clipboard.get(atom)
             self.clipboard.set_image(pixbuf)
             self.clipboard.store()
 
-    def paste_image(self, menu):
-        # atom = Gdk.atom_intern('CLIPBOARD', True)
-        # clipboard = Gtk.Clipboard.get(atom)
+    def paste_image(self, menu, window):
         pixbuf = self.clipboard.wait_for_image()
         if pixbuf is not None:
             dialog = Gtk.FileChooserDialog('Guardar la imagen del\
                                             portapapeles como ...',
-                                           None,
+                                           window,
                                            Gtk.FileChooserAction.SAVE,
                                            (Gtk.STOCK_CANCEL,
                                             Gtk.ResponseType.CANCEL,
@@ -244,13 +175,41 @@ this program.  If not, see <http://www.gnu.org/licenses/>.
             if response == Gtk.ResponseType.OK:
                 filename = dialog.get_filename()
                 dialog.destroy()
-                print filename
-                jpeg”, “png”, “tiff”, “ico” or “bmp”
                 if filename[-4:].lower() in SAVETO:
                     pixbuf.savev(filename, filename[-3:].lower(), (), ())
                 else:
                     filename = filename + '.png'
                     pixbuf.savev(filename, 'png', (), ())
+
+    def about(self, widget, window):
+        ad = Gtk.AboutDialog(parent=window)
+        ad.set_name(APPNAME)
+        ad.set_version(VERSION)
+        ad.set_copyright('Copyrignt (c) 2016\nLorenzo Carbonell')
+        ad.set_comments(APPNAME)
+        ad.set_license('''
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or (at your option) any later
+version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with
+this program. If not, see <http://www.gnu.org/licenses/>.
+''')
+        ad.set_website('http://www.atareao.es')
+        ad.set_website_label('http://www.atareao.es')
+        ad.set_authors([
+            'Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>'])
+        ad.set_documenters([
+            'Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>'])
+        ad.set_icon_name(ICON)
+        ad.set_logo_icon_name(APPNAME)
+        ad.run()
+        ad.destroy()
 
 if __name__ == '__main__':
     '''

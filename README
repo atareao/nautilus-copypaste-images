@@ -1,0 +1,18 @@
+convert2mp3
+===========
+
+convert2mp3
+
+Download
+--------
+
+Download the [package][dlp] *or* checkout the source:
+
+    $ git clone https://github.com/atareao/convert2mp3.git
+
+Installation
+------------
+
+    $ sudo add-apt-repositoy ppa:atareao/nautilus-extensions
+    $ sudo apt-get update
+    $ sudo apt-get install convert2mp3

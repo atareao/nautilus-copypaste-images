@@ -1,0 +1,2 @@
+src/nautilus-copypaste-images.py /usr/share/nautilus-python/extensions
+data/nautilus-copypaste-images.svg /usr/share/icons/gnome/scalable/apps
