@@ -38,7 +38,7 @@ from gi.repository import GdkPixbuf
 
 APPNAME = 'nautilus-copypaste-images'
 ICON = 'nautilus-copypaste-images'
-VERSION = '0.1.0-0extras15.10.0'
+VERSION = '0.2.0-0extras16.04.1'
 
 
 def get_suported_extensions():
@@ -79,7 +79,7 @@ class CopyPasteImagesMenuProvider(GObject.GObject, FileManager.MenuProvider):
     def all_files_are_images(self, items):
         for item in items:
             fileName, fileExtension = os.path.splitext(item.get_uri()[7:])
-            if fileExtension.lower() not in EXTENSIONS:
+            if fileExtension.lower() not in EXTENSIONS_FROM:
                 return False
         return True
 
@@ -115,7 +115,7 @@ class CopyPasteImagesMenuProvider(GObject.GObject, FileManager.MenuProvider):
             submenu.append_item(sub_menuitem02)
         sub_menuitem_98 = FileManager.MenuItem(
             name='CopyPasteImagesMenuProvider::Gtk-none',
-            label=SEPARATOR)
+            label=Gtk.SeparatorMenuItem())
         submenu.append_item(sub_menuitem_98)
         sub_menuitem_99 = FileManager.MenuItem(
             name='CopyPasteImagesMenuProvider::Gtk-document-converter-99',
