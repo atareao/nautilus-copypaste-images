@@ -1,9 +1,9 @@
-nautilus-copypaste-images (0.2.0-0extras16.04.0) xenial; urgency=medium
+nautilus-copypaste-images (0.2.0-0extras16.04.2) xenial; urgency=medium
 
   * Changed icon
   * Format
 
- -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Sun, 18 Dec 2016 12:25:35 +0100
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Tue, 02 May 2017 07:00:30 +0200
 
 nautilus-copypaste-images (0.1.0-0extras15.10.0) wily; urgency=medium
 

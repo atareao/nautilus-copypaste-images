@@ -1,18 +1,18 @@
-convert2mp3
-===========
+nautilus-copypaste-images
+=========================
 
-convert2mp3
+nautilus-copypaste-images
 
 Download
 --------
 
 Download the [package][dlp] *or* checkout the source:
 
-    $ git clone https://github.com/atareao/convert2mp3.git
+    $ git clone https://github.com/atareao/nautilus-copypaste-images.git
 
 Installation
 ------------
 
     $ sudo add-apt-repositoy ppa:atareao/nautilus-extensions
     $ sudo apt-get update
-    $ sudo apt-get install convert2mp3
+    $ sudo apt-get install nautilus-copypaste-images
