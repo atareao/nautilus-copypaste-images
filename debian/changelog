@@ -1,3 +1,9 @@
+nautilus-copypaste-images (0.2.1-0extras17.10.0) artful; urgency=medium
+
+  * SEPARATOR was not defined and EXTENSIONS  by werty1st
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Thu, 26 Oct 2017 17:57:25 +0200
+
 nautilus-copypaste-images (0.2.0-0extras16.04.2) xenial; urgency=medium
 
   * Changed icon
