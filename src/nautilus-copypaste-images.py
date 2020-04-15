@@ -29,9 +29,9 @@ except Exception as e:
 import os
 from threading import Thread
 try:
-	from urllib import unquote_plus
-except:
-	from urllib.parse import unquote_plus
+    from urllib import unquote_plus
+except ImportError:
+    from urllib.parse import unquote_plus
 from gi.repository import GObject
 from gi.repository import Gtk
 from gi.repository import GLib
