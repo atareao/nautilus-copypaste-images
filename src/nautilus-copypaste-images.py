@@ -28,7 +28,10 @@ except Exception as e:
     exit(-1)
 import os
 from threading import Thread
-from urllib import unquote_plus
+try:
+	from urllib import unquote_plus
+except:
+	from urllib.parse import unquote_plus
 from gi.repository import GObject
 from gi.repository import Gtk
 from gi.repository import GLib
@@ -116,14 +119,14 @@ class CopyPasteImagesMenuProvider(GObject.GObject, FileManager.MenuProvider):
         sub_menuitem_98 = FileManager.MenuItem(
             name='CopyPasteImagesMenuProvider::Gtk-none',
             label=Gtk.SeparatorMenuItem())
-        submenu.append_item(sub_menuitem_98)
+        # submenu.append_item(sub_menuitem_98)
         sub_menuitem_99 = FileManager.MenuItem(
             name='CopyPasteImagesMenuProvider::Gtk-document-converter-99',
             label=_('About'),
             tip=_('About'),
             icon='Gtk-find-and-replace')
-        sub_menuitem_99.connect('activate', self.about)
-        submenu.append_item(sub_menuitem_99)
+        # sub_menuitem_99.connect('activate', self.about)
+        # submenu.append_item(sub_menuitem_99)
         return top_menuitem,
 
     def copy_image(self, menu, files, window):
