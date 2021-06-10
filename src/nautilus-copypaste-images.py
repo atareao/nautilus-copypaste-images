@@ -3,22 +3,26 @@
 #
 # This file is part of nautilus-copypaste-images
 #
-# Copyright (C) 2016 Lorenzo Carbonell
-# lorenzo.carbonell.cerezo@gmail.com
+# Copyright (c) 2016 Lorenzo Carbonell Cerezo <a.k.a. atareao>
 #
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
 #
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
 #
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 import gi
 try:
     gi.require_version('Gtk', '3.0')
@@ -28,7 +32,7 @@ except Exception as e:
     exit(-1)
 import os
 from threading import Thread
-from urllib import unquote_plus
+from urllib.parse import unquote_plus
 from gi.repository import GObject
 from gi.repository import Gtk
 from gi.repository import GLib
@@ -52,7 +56,7 @@ def get_suported_extensions():
     return extensions
 
 EXTENSIONS_FROM = get_suported_extensions()
-SAVETO = ['.png', '.jpg', '.tif', '.ico', '.bmp']
+SAVETO = ['.png', '.tif', '.ico', '.bmp']
 _ = str
 
 
@@ -73,6 +77,7 @@ class CopyPasteImagesMenuProvider(GObject.GObject, FileManager.MenuProvider):
     def __init__(self):
         """FileManager crashes if a plugin doesn't implement the __init__
         method"""
+        GObject.Object.__init__(self)
         atom = Gdk.atom_intern('CLIPBOARD', True)
         self.clipboard = Gtk.Clipboard.get(atom)
 
@@ -115,14 +120,14 @@ class CopyPasteImagesMenuProvider(GObject.GObject, FileManager.MenuProvider):
             submenu.append_item(sub_menuitem02)
         sub_menuitem_98 = FileManager.MenuItem(
             name='CopyPasteImagesMenuProvider::Gtk-none',
-            label=Gtk.SeparatorMenuItem())
+            label=u'\u2015' * 10)
         submenu.append_item(sub_menuitem_98)
         sub_menuitem_99 = FileManager.MenuItem(
             name='CopyPasteImagesMenuProvider::Gtk-document-converter-99',
             label=_('About'),
             tip=_('About'),
             icon='Gtk-find-and-replace')
-        sub_menuitem_99.connect('activate', self.about)
+        sub_menuitem_99.connect('activate', self.about, window)
         submenu.append_item(sub_menuitem_99)
         return top_menuitem,
 
@@ -161,15 +166,7 @@ class CopyPasteImagesMenuProvider(GObject.GObject, FileManager.MenuProvider):
             filter = Gtk.FileFilter()
             filter.set_name('Imagenes')
             filter.add_mime_type('image/png')
-            filter.add_mime_type('image/jpeg')
-            filter.add_mime_type('image/tiff')
-            filter.add_mime_type('image/ico')
-            filter.add_mime_type('image/bmp')
             filter.add_pattern('*.png')
-            filter.add_pattern('*.jpg')
-            filter.add_pattern('*.tif')
-            filter.add_pattern('*.ico')
-            filter.add_pattern('*.bmp')
             dialog.add_filter(filter)
             response = dialog.run()
             if response == Gtk.ResponseType.OK:
@@ -188,17 +185,23 @@ class CopyPasteImagesMenuProvider(GObject.GObject, FileManager.MenuProvider):
         ad.set_copyright('Copyrignt (c) 2016\nLorenzo Carbonell')
         ad.set_comments(APPNAME)
         ad.set_license('''
-This program is free software: you can redistribute it and/or modify it under
-the terms of the GNU General Public License as published by the Free Software
-Foundation, either version 3 of the License, or (at your option) any later
-version.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-This program is distributed in the hope that it will be useful, but WITHOUT
-ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
 
-You should have received a copy of the GNU General Public License along with
-this program. If not, see <http://www.gnu.org/licenses/>.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 ''')
         ad.set_website('http://www.atareao.es')
         ad.set_website_label('http://www.atareao.es')
